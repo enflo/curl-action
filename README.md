@@ -8,13 +8,13 @@
 
 ### Docker
 
-"""
+```bash
 docker run enflo/curl-action {{ OPTION }} {{ URL }}
-"""
+```
 
 ### GitHub Actions
 
-"""
+```bash
 name: CURL CLI ACTION
 on: push
 jobs:
@@ -26,7 +26,7 @@ jobs:
       uses: enflo/curl-action@master
       with:
         args: {{ OPTION }} {{ URL }}
-"""
+```
 
 [travis-image]: https://travis-ci.com/enflo/curla-action.svg?branch=master
 [travis-url]: https://travis-ci.com/enflo/curla-action
