@@ -12,4 +12,8 @@ jobs:
       - docker build --build-arg VERSION=$VERSION -t curl-action:$VERSION -f Dockerfile .
       - docker images
       - docker tag curl-action:$VERSION $DOCKER_USERNAME/curl-action:$VERSION
+      - docker tag curl-action:$VERSION $DOCKER_USERNAME/curl-action:latest
+      - docker tag curl-action:$VERSION $DOCKER_USERNAME/curl-action
       - docker push $DOCKER_USERNAME/curl-action:$VERSION
+      - docker push $DOCKER_USERNAME/curl-action:latest
+      - docker push $DOCKER_USERNAME/curl-action
