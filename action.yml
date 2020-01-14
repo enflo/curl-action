@@ -1,0 +1,9 @@
+name: CURL-ACTION
+author: Antoni Florit Homar
+description: a cURL CLI
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'command'
+  color: 'gray-dark'
