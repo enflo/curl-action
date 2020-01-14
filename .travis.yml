@@ -1,0 +1,12 @@
+dist: trusty
+
+jobs:
+  include:
+    - stage: build docker image
+      script:
+      - export VERSION=0.0.1
+      - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+      - docker build --build-arg VERSION=$VERSION -t curl-action:$VERSION -f Dockerfile .
+      - docker images
+      - docker tag curl-action:$VERSION $DOCKER_USERNAME/curl-action:$VERSION
+      - docker push $DOCKER_USERNAME/curl-action:$VERSION
