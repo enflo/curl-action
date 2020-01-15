@@ -1,5 +1,6 @@
 FROM alpine:3.11
 
+ENV VERSION=0.0.1
 ARG VERSION
 
 # Github labels
@@ -15,4 +16,8 @@ LABEL "version"=$VERSION
 
 RUN apk add --update --no-cache bash curl
 
-ENTRYPOINT ["/usr/bin/curl"]
+# Copies your code file from your action repository to the filesystem path `/` of the container
+COPY entrypoint.sh /entrypoint.sh
+
+# Code file to execute when the docker container starts up (`entrypoint.sh`)
+ENTRYPOINT ["/entrypoint.sh"]

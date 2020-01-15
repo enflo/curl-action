@@ -6,13 +6,23 @@
 
 ## USAGE
 
+This action accepts all types of cURL arguments, allows to execute from a simple cURL to a URL to a more complex one with user and parameters
+
 ### Docker
 
 ```bash
-docker run enflo/curl-action {{ OPTION }} {{ URL }}
+docker run enflo/curl-action {{ CURL ARGUMENTS }}
 ```
 
 ### GitHub Actions
+
+#### Inputs
+
+##### `curl`
+
+**Required** cURL Parameters. Default `"toniflorithomar.cat"`.
+
+#### Example usage
 
 ```bash
 name: CURL CLI ACTION
@@ -25,7 +35,7 @@ jobs:
     - name: curl
       uses: enflo/curl-action@master
       with:
-        args: {{ OPTION }} {{ URL }}
+        curl: {{ CURL ARGUMENTS }}
 ```
 
 [travis-image]: https://travis-ci.com/enflo/curla-action.svg?branch=master

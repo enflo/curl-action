@@ -1,9 +1,20 @@
+# action.yml
 name: CURL-ACTION
 author: Antoni Florit Homar
 description: a cURL CLI
+inputs:
+  curl:  # id of input
+    description: 'curl arguments'
+    required: true
+    default: 'toniflorithomar.cat'
+outputs:
+  response: # id of output
+    description: 'Curl response'
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+    - ${{ inputs.curl }}
 branding:
   icon: 'command'
   color: 'gray-dark'
