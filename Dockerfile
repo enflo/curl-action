@@ -1,6 +1,8 @@
 FROM alpine:3.11
 
-ENV VERSION=0.0.1
+ENV VERSION=0.0.3
+ENV GITHUB_HEAD_REF = ""
+
 ARG VERSION
 
 # Github labels
